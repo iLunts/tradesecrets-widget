@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/widget.css">
+</head>
+<body>
+
+  <div class="widget widget--line">
+    <div class="widget__header">
+      <div class="widget__avatar">
+        <img src="" alt="" class="widget__avatar-img">
+      </div>
+      <div class="widget__person">
+        <p class="widget__person-name"></p>
+        <p class="widget__person-subname">
+          Sunshine Coast Australian
+        </p>
+        <p class="widget__person-role">
+          Sunshine Coast Australian
+        </p>
+
+        <div class="widget__person-actions">
+          <button class="widget__person-actions-btn widget-btn widget-btn--white" type="button">AUD <span class="js-price">6.50</span> <small> / min</small></button>
+        </div>
+      </div>
+    </div>
+    <div class="widget__desc"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js" type="text/javascript"></script>
+  <script>
+    $('.widget__person-name').text(faker.name.findName() + '(' + faker.commerce.department() + ')');
+    $('.widget__avatar-img').attr("src", faker.internet.avatar());
+    $('.widget__desc').text(faker.lorem.sentence());
+    $('.js-price').text(faker.commerce.price());
+  </script>
+  
+</body>
+</html>
